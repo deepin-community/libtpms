@@ -1,0 +1,21 @@
+Do not run check-local due to bug in ppc64 gcc on Jammy
+
+ppc64 gcc has a bug causing issued in check-local.
+Therefore, do not run check-local while ppc64 gcc is broken
+on Ubuntu Jammy.
+
+---
+ src/Makefile.am |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -599,7 +599,7 @@
+ LDFLAGS_ARCH += $(findstring -m64, $(AM_LDFLAGS))
+ 
+ check-local: SHELL?="/usr/bin/env bash"
+-check-local:
++NO-check-local:
+ 	@case $(host_os) in \
+ 	  openbsd*) ADDLIBS="-lc" ;; \
+ 	  darwin*|freebsd*) LDFLAGS_OS="-shared" ;; \

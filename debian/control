@@ -1,15 +1,26 @@
-Source: template-repository
-Section: unknown
+Source: libtpms
+Maintainer: Seunghun Han <kkamagui@gmail.com>
+Section: libs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13), dh-exec, gawk, libssl-dev, libtool, pkg-config
+Homepage: https://github.com/stefanberger/libtpms
+Vcs-Git: https://salsa.debian.org/debian/libtpms.git
+Vcs-Browser: https://salsa.debian.org/debian/libtpms
 
-Package: template-repository
+Package: libtpms-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Section: libdevel
+Depends: libtpms0 (= ${binary:Version}), ${misc:Depends}
+Description: libtpms header files and man pages
+ The libtpms-dev package provides header files and man pages for the
+ functions provided by libtpms.
+
+Package: libtpms0
+Architecture: any
+Multi-Arch: same
+Depends: openssl, ${misc:Depends}, ${shlibs:Depends}
+Description: TPM emulation library
+ Libtpms is a library that provides TPM functionality. Libtpm is used
+ by swtpm package.
