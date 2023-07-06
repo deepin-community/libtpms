@@ -1,0 +1,20 @@
+Do not inline MakeIV due toppc64 compiler issue
+
+The ppc64 gcc compiler has an issue with MakeIv.
+
+---
+ src/tpm2/AlgorithmTests.c |    3 +++
+ 1 file changed, 3 insertions(+)
+
+--- a/src/tpm2/AlgorithmTests.c
++++ b/src/tpm2/AlgorithmTests.c
+@@ -179,6 +179,9 @@
+ /* 10.2.1.4.1 MakeIv() */
+ /* Internal function to make the appropriate IV depending on the mode. */
+ static UINT32
++#if defined(__powerpc64__)
++__attribute__((noinline))
++#endif
+ MakeIv(
+        TPM_ALG_ID    mode,     // IN: symmetric mode
+        UINT32        size,     // IN: block size of the algorithm

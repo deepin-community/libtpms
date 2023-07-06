@@ -1,5 +1,84 @@
-template-repository (1.0-1) unstable; urgency=medium
+libtpms (0.9.2-3.1) unstable; urgency=medium
 
-  * Initial release
+  * Non-maintainer upload.
+  * tpm2: Check size of buffer before accessing it (CVE-2023-1017,
+    CVE-2023-1018) (Closes: #1032420)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Salvatore Bonaccorso <carnil@debian.org>  Tue, 07 Mar 2023 22:32:00 +0100
+
+libtpms (0.9.2-3) unstable; urgency=medium
+
+  * Fix ppc64el build errors (Closes: #997969)
+  * debian/patches: Import upstream patches for fixing build errors
+
+ -- Seunghun Han <kkamagui@gmail.com>  Tue, 08 Mar 2022 17:34:16 +0900
+
+libtpms (0.9.2-2) unstable; urgency=medium
+
+  * Upload source only for upstream version 0.9.2
+
+ -- Seunghun Han <kkamagui@gmail.com>  Tue, 22 Feb 2022 17:29:00 +0900
+
+libtpms (0.9.2-1) unstable; urgency=medium
+
+  * New upstream version 0.9.2 (Closes: #1006213)
+
+ -- Seunghun Han <kkamagui@gmail.com>  Tue, 22 Feb 2022 15:19:28 +0900
+
+libtpms (0.9.1-1) unstable; urgency=medium
+
+  * New upstream version 0.9.1
+  * Fix a security issue, CVE-2021-3623 (Closes: #990522)
+  * debian/patches: Remove some useless patches because of new upstream
+    version
+  * debian/control: Change Standards-Version to 4.6.0
+
+ -- Seunghun Han <kkamagui@gmail.com>  Fri, 04 Feb 2022 15:03:03 +0900
+
+libtpms (0.8.2-1) unstable; urgency=medium
+
+  * New upstream version 0.8.2
+  * Fix a security issue, CVE-2021-3446 (Closes: #986799)
+  * debian/patches: Remove some useless patches because of new upstream
+    version
+  * debian/copyright: Fix lintian issues
+
+ -- Seunghun Han <kkamagui@gmail.com>  Wed, 14 Apr 2021 13:49:01 +0900
+
+libtpms (0.8.0~dev1-1.2) unstable; urgency=medium
+
+  * Fix a non-reproducible bug caused by the invalid path (Closes: #964768)
+  * Fix a FTBFS bug caused by the incomplete condition (Closes: #966857)
+
+ -- Seunghun Han <kkamagui@gmail.com>  Sun, 09 Aug 2020 02:31:09 +0900
+
+libtpms (0.8.0~dev1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/control: Set git packaging repo to be under Salsa Debian
+    group.
+  * Source-only upload to allow testing migration.
+  * debian/install: Also install static library for -dev package.
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 07 Jul 2020 10:58:58 -0400
+
+libtpms (0.8.0~dev1-1) unstable; urgency=medium
+
+  * New maintainer (Closes: #958071)
+  * Updated standards version to 4.5.0 in debian/control
+  * Updated debhelper version to 12 in debian/control
+  * Added Rules-Requires-Root to debian/control
+  * Added Vcs-Browser and Vcs-Git to debian/control
+  * Removed autotools-dev and dh-autoreconf from debian/control since enabled
+    by default
+  * Removed autotools-dev, parallel options from debian/rules since deprecated
+    and enabled by default
+  * Converted debian/copyright to dep5-copyright format
+  * Added debian/watch file
+  * Added debian/libtpms.symbols file
+  * Added debian/upstream/metadata file
+  * Changed section of man pages from 1 to 3
+  * Fixed typos and a long line warning in man pages
+  * Set date of man pages to last changelog entry
+
+ -- Seunghun Han <kkamagui@gmail.com>  Sat, 18 Apr 2020 09:20:03 +0900

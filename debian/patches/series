@@ -1,0 +1,5 @@
+0003-set-man-page-date-to-last-changelog.patch
+0004-fix-ftbfs-bug.patch
+do_not_inline_makeiv.patch
+no_local_check.patch
+tpm2-Check-size-of-buffer-before-accessing-it-CVE-20.patch
