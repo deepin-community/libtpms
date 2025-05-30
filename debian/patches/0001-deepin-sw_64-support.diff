@@ -1,0 +1,12 @@
+diff --git a/configure.ac b/configure.ac
+index ea76130..5a5c768 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -246,6 +246,7 @@ CFLAGS="$CFLAGS -DUSE_OPENSSL_FUNCTIONS_SYMMETRIC=$use_openssl_functions_symmetr
+ CFLAGS="$CFLAGS -DUSE_OPENSSL_FUNCTIONS_EC=$use_openssl_functions_ec"
+ CFLAGS="$CFLAGS -DUSE_OPENSSL_FUNCTIONS_ECDSA=$use_openssl_functions_ecdsa"
+ CFLAGS="$CFLAGS -DUSE_OPENSSL_FUNCTIONS_RSA=$use_openssl_functions_rsa"
++CFLAGS="$CFLAGS -g -O2 -fno-stack-protector -Wno-error"
+ 
+ AC_ARG_ENABLE([sanitizers], AS_HELP_STRING([--enable-sanitizers], [Enable address sanitizing]),
+     [SANITIZERS="-fsanitize=address,undefined"], [])
