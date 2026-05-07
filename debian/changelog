@@ -1,3 +1,10 @@
+libtpms (0.9.2-3.1deepin2) unstable; urgency=medium
+
+  * Fix CVE-2025-49133: Fix potential out-of-bound access & abort due to
+    HMAC signing issue.
+
+ -- deepin-ci-robot <packages@deepin.org>  Thu, 07 May 2026 22:24:11 +0800
+
 libtpms (0.9.2-3.1deepin1) unstable; urgency=medium
 
   * feat: add sw64 support.
